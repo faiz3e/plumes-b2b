@@ -2792,6 +2792,7 @@ select.form-control-lg:not([size]):not([multiple]),
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  border-radius: 5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -5092,8 +5093,13 @@ input[type="button"].btn-block {
   margin-bottom: 0;
 }
 
+.card-link {
+  text-decoration: none;
+  color: #AD9ADE;
+}
 .card-link:hover {
   text-decoration: none;
+  color: #403952;
 }
 
 .card-link+.card-link {
@@ -11257,7 +11263,7 @@ html {
   top: 10px;
   left: -1px;
   padding: 2px 15px;
-  color: #383838;
+  color: #ffffff;
   font-weight: 300;
   background: #AD9ADE;
 }
@@ -11873,7 +11879,15 @@ textarea.form-control {
 }
 
 .ftco-section {
-  padding: 9em 0;
+  padding: 4em 0;
+  position: relative;
+}
+.ftco-section-small {
+  padding: 4em 0;
+  position: relative;
+}
+.ftco-section-big {
+  padding: 7em 0;
   position: relative;
 }
 

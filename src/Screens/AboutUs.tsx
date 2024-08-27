@@ -1,10 +1,54 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import bannerYellow from '../images/banner_yellow.png'
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { ReviewBlog } from "./components/reviewBlog";
 
 const AboutUs = (props) => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const totalCards = 6; // Adjust this according to the number of cards
+    const cardsPerSlide = 3;
+    const cardWidth = 420; // Width of card + margin (100px width + 20px margin)
+    const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+    const carouselRef = useRef(null);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+        }, 2000); // Slide every 2 seconds
+        return () => clearInterval(interval);
+    }, [totalSlides]);
+
+    useEffect(() => {
+        if (carouselRef.current) {
+            carouselRef.current.style.transform = `translateX(-${currentSlide * cardWidth * cardsPerSlide
+                }px)`;
+        }
+    }, [currentSlide]);
+
+    const CaraoselItem = () => {
+        return (<>
+            {/* <div className="carousel-item slider-bg-01 active">
+                <div className="bg-color-01"></div>
+            </div>
+            <div className="carousel-item slider-bg-01">
+                <div className="bg-color-02"></div>
+            </div>
+            <div className="carousel-item slider-bg-01">
+                <div className="bg-color-03"></div>
+            </div>
+            <div className="carousel-item slider-bg-01">
+                <div className="bg-color-04"></div>
+            </div> */}
+        </>
+
+        )
+    }
+
     return (
         <>
-            <div className="hero-wrap hero-bread pb-5" style={{ backgroundImage: `url("./images/bg_6.jpeg")` }}>
+            <div className="hero-wrap hero-bread pb-5" style={{ backgroundImage: `url(${bannerYellow})` }}>
                 <div className="container p-4">
                     <div className="row no-gutters slider-text align-items-center justify-content-center">
                         <div className="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
@@ -13,11 +57,85 @@ const AboutUs = (props) => {
                     </div>
                 </div>
             </div>
+
+            {/* {[{}, {}, {}, {}, {}].map(() => {
+                        return <CaraoselItem />
+                    })} */}
+            <section className="ftco-section testimony-section bg-light">
+                {/* <section className="ftco-section ftco-no-pb ftco-no-pt bg-light">
+                    <div className="container">
+                        <div className="row justify-content-center mb-3 pb-3">
+                            <div className="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated">
+                                <h1 className="big">Testimony</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </section> */}
+                <div className="container">
+                    <div className="row d-flex justify-content-center py-5">
+                        <div className="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
+                            <h1 className="big">Testimony</h1>
+                            <h2>What clients think about us.</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <Carousel
+                    showArrows={true}
+                    showThumbs={false}
+                    infiniteLoop={true}
+                    autoPlay={true}
+                    interval={2000}
+                    transitionTime={500}
+                    showStatus={false}
+                    centerMode={true}
+                    centerSlidePercentage={33} // 100 / 3 = 33.33% width for each item in the slide
+                    showIndicators={false} // Optional, to hide indicators if you don't want them
+                >
+                    <div>
+                        <ReviewBlog />
+                        {/* <img src="https://via.placeholder.com/300x200" alt="Item 1" /> */}
+                        {/* <p className="legend">Item 1</p> */}
+                    </div>
+                    <div>
+                        <ReviewBlog />
+
+                        {/* <img src="https://via.placeholder.com/300x200" alt="Item 2" /> */}
+                        {/* <p className="legend">Item 2</p> */}
+                    </div>
+                    <div>
+                        <ReviewBlog />
+
+                        {/* <img src="https://via.placeholder.com/300x200" alt="Item 3" /> */}
+                        {/* <p className="legend">Item 3</p> */}
+                    </div>
+                    <div>
+                        <ReviewBlog />
+
+                        {/* <img src="https://via.placeholder.com/300x200" alt="Item 4" /> */}
+                        {/* <p className="legend">Item 4</p> */}
+                    </div>
+                    <div>
+                        <ReviewBlog />
+
+                        {/* <img src="https://via.placeholder.com/300x200" alt="Item 5" /> */}
+                        {/* <p className="legend">Item 5</p> */}
+                    </div>
+                    <div>
+                        <ReviewBlog />
+
+                        {/* <img src="https://via.placeholder.com/300x200" alt="Item 6" /> */}
+                        {/* <p className="legend">Item 6</p> */}
+                    </div>
+                </Carousel>
+            </section>
+
             <section className="ftco-section ftco-no-pb ftco-no-pt bg-light">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style={{}}>
-                            <a href="https://vimeo.com/45830194" className="icon popup-vimeo d-flex justify-content-center align-items-center" >
+                            <a href="https://vimeo.com/45830194" style={{ backgroundImage: `url(${bannerYellow})` }} className="icon popup-vimeo d-flex justify-content-center align-items-center" >
                                 <span className="icon-play"></span>
                             </a>
                         </div>
@@ -36,166 +154,7 @@ const AboutUs = (props) => {
                 </div>
             </section >
             <section className="ftco-section testimony-section bg-light">
-                <div className="container">
-                    <div className="row justify-content-center mb-3 pb-3">
-                        <div className="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated">
-                            <h1 className="big">Testimony</h1>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-md-8 ftco-animate fadeInUp ftco-animated">
-                            <div className="row ftco-animate fadeInUp ftco-animated">
-                                <div className="col-md-12">
-                                    <div className="carousel-testimony owl-carousel ftco-owl owl-loaded owl-drag">
-                                        <div className="owl-stage-outer"><div className="owl-stage" style={{}}><div className="owl-item cloned" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item cloned" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item cloned" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item active" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item cloned" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item cloned" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div><div className="owl-item cloned" style={{}}><div className="item">
-                                            <div className="testimony-wrap py-4 pb-5">
-                                                <div className="user-img mb-4" style={{}}>
-                                                    <span className="quote d-flex align-items-center justify-content-center">
-                                                        <i className="icon-quote-left"></i>
-                                                    </span>
-                                                </div>
-                                                <div className="text text-center">
-                                                    <p className="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                                    <p className="name">Roger Scott</p>
-                                                    <span className="position">Customer</span>
-                                                </div>
-                                            </div>
-                                        </div></div></div></div><div className="owl-nav disabled"><button role="presentation" className="owl-prev"><span className="ion-ios-arrow-back"></span></button><button role="presentation" className="owl-next"><span className="ion-ios-arrow-forward"></span></button></div><div className="owl-dots"><button className="owl-dot"><span></span></button><button className="owl-dot"><span></span></button><button className="owl-dot active"><span></span></button><button className="owl-dot"><span></span></button><button className="owl-dot"><span></span></button></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <section className="ftco-section ftco-counter img" id="section-counter" style={{}}>
                     <div className="container">
                         <div className="row justify-content-center py-5">

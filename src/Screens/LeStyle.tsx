@@ -7,12 +7,12 @@ export const LeStyle = (props) => {
             <div className="overlay"></div>
             <div className="container">
 
-                <div className="row no-gutters slider-text js-fullheight align-items-center justify-content-center" style={{ height: '100vh' }}>
+                <div className="row no-gutters slider-text js-fullheight align-items-center justify-content-center" style={{ height: '95vh' }}>
                     <h3 className="v">Plumes - Kids wear</h3>
                     <h3 className="vr">Since - 1985</h3>
                     <div className="col-md-11  text-center">
-                        <h1 style={{ color: 'rgba(0, 0, 0, 0.5)' }}>Plumes</h1>
-                        <h2 style={{ color: 'rgba(0, 0, 0, 0.5)' }}>Mother Approved Outfioutfits</h2>
+                        <h1 style={{ color: 'rgba(0, 0, 0, 0.7)' }}>P L U M E S</h1>
+                        <h3 style={{ color: 'rgba(0, 0, 0, 0.5)' }}>Mother Approved Outfioutfits</h3>
                     </div>
                     <div className="mouse">
                         <a href="#trending" className="mouse-icon">

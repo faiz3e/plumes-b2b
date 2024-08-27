@@ -11,6 +11,7 @@ import { Testimony } from './Testimony';
 import { Blog } from './Blog';
 import { Services } from './Services';
 import { Subscribe } from './Subscribe';
+import { WeCanHelp } from "./WeCanHelp";
 
 
 export const Home = (props) => {
@@ -18,10 +19,11 @@ export const Home = (props) => {
         <div>
             <LeStyle />
             <div className="goto-here"></div>
-            <Trending />
+            <WeCanHelp />
+            {/* <Trending /> */}
             <Modist />
             <OurProducts />
-            <SummerSale />
+            {/* <SummerSale /> */}
             <Testimony />
             <Blog />
             <Services />

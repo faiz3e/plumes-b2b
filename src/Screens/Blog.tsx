@@ -16,7 +16,7 @@ export const Blog = (props) => {
               <div className="col-md-3 d-flex justify-content-center counter-wrap ">
                 <div className="block-18 text-center">
                   <div className="text">
-                    <strong className="number" data-number="10000">0</strong>
+                    <strong className="number" data-number="10000">2344</strong>
                     <span>Happy Customers</span>
                   </div>
                 </div>
@@ -24,15 +24,15 @@ export const Blog = (props) => {
               <div className="col-md-3 d-flex justify-content-center counter-wrap ">
                 <div className="block-18 text-center">
                   <div className="text">
-                    <strong className="number" data-number="100">0</strong>
-                    <span>Branches</span>
+                    <strong className="number" data-number="100">809</strong>
+                    <span>Reviews</span>
                   </div>
                 </div>
               </div>
               <div className="col-md-3 d-flex justify-content-center counter-wrap ">
                 <div className="block-18 text-center">
                   <div className="text">
-                    <strong className="number" data-number="1000">0</strong>
+                    <strong className="number" data-number="1000">12</strong>
                     <span>Partner</span>
                   </div>
                 </div>
@@ -40,8 +40,8 @@ export const Blog = (props) => {
               <div className="col-md-3 d-flex justify-content-center counter-wrap ">
                 <div className="block-18 text-center">
                   <div className="text">
-                    <strong className="number" data-number="100">0</strong>
-                    <span>Awards</span>
+                    <strong className="number" data-number="100">2</strong>
+                    <span>Certifications</span>
                   </div>
                 </div>
               </div>
