@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import { firestoreConnect } from 'react-redux-firebase'
-import banner_yellow from '../images/banner_yellow.png'
+import banner_yellow from '../images/background-purple.jpg'
 
 
 

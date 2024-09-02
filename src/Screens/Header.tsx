@@ -26,9 +26,10 @@ const Header = (props) => {
         <Link style={{ paddingLeft: '10px' }} className="navbar-brand" to="/">Plumes</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
           aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="oi oi-menu"></span>{"Menu"}</button>
-        <div className="collapse navbar-collapse" id="ftco-nav">
-          <ul className="navbar-nav ml-auto">
+          {/* <span className="oi oi-menu"></span>{"Menu"} */}
+          </button>
+        {true && <div className="collapse navbar-collapse" id="ftco-nav">
+          {false && <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
               <span className="nav-link"><NavLink to="/">Home</NavLink></span></li>
             <li className="nav-item dropdown">
@@ -61,8 +62,8 @@ const Header = (props) => {
               {false && <Link to="/" onClick={() => logout()} className="nav-link"><span
                 className="icon-shopping_cart"></span>Logout</Link>}
             </li>
-          </ul>
-        </div>
+          </ul>}
+        </div>}
       </div>
     </nav>
   )

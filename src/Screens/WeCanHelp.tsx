@@ -17,7 +17,7 @@ import home_slide3 from '../images/home-slide3.png'
 
 export const WeCanHelp = (props) => {
   return (
-    <section className="ftco-section-big ftco-product" id='trending'>
+    <section className="ftco-section-big ftco-product pb-5" id='trending'>
       <div className="container-fluid">
         <div className="row justify-content-center mb-3 pb-3">
           <div className="col-md-12 heading-section text-center">
@@ -32,7 +32,7 @@ export const WeCanHelp = (props) => {
             <button className=" btn btn-primary py-3 px-4 mb-4" onClick={() => { }}>{'Explore business growth with us.'}</button>
           </div>
         </div>
-        <div className="container-fluid pt-3 pb-5 ">
+        <div className="container-fluid pt-3 pb-5 pt-5">
           <div className="row px-4 mx-4 pt-3">
             {[{
               heading: "Fabric sourcing",
@@ -65,7 +65,7 @@ export const WeCanHelp = (props) => {
             },
             ].map((item) => {
               return (
-                <div className="col col-4 p-4 mb-1">
+                <div className="col col-md-4 col-lg-4 p-4 mb-1 col-sm-12 ">
                   <div className="card row d-flex flex-row border-0">
                     <div className="col p-0 col-6">
                       <img className="card-img-top" src={item.img} style={{ maxHeight: '15em', objectFit: 'contain' }} alt="Card image cap" />
@@ -74,9 +74,6 @@ export const WeCanHelp = (props) => {
                       <div className="card-body p-2">
                         <h5 className="card-title">{item.heading}</h5>
                         <p className="card-subtitle mb-2 text-muted">{item.subHeading}</p>
-                        {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                        {/* <a href="#" className="card-link">Card link</a> */}
-                        {/* <button className=" btn " onClick={() => { }}>{'Check out how'}</button> */}
                         <a href="#" className="card-link">Check out how</a>
                       </div>
                     </div>

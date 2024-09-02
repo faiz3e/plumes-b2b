@@ -3,7 +3,7 @@ import React from "react";
 
 export const Modist = (props) => {
   return (
-    <section className="ftco-section ftco-no-pb ftco-no-pt bg-light">
+    <section className="ftco-section ftco-no-pb ftco-no-pt bg-light pb-5">
       <div className="container">
         <div className="row">
           <div className="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"

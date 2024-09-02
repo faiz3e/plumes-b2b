@@ -12,16 +12,16 @@ import home_slide7 from '../images/home-slide7.png'
 export const OurProducts = (props) => {
 
     return (
-        <section className="ftco-section bg-light">
-            <div className="container">
-                <div className="row justify-content-center mb-3 pb-3">
+        <section className="ftco-section bg-light pt-5">
+            <div className="container mt-5">
+                <div className="row justify-content-center mb-3 pb-3 ">
                     <div className="col-md-12 heading-section text-center ">
                         <h1 className="big">Products</h1>
                         <h2 className="mb-4">Our Products</h2>
                     </div>
                 </div>
             </div>
-            <div className="container-fluid">
+            <div className="container-fluid pt-3 mt-4">
                 <div className="row">
                     <div className="col-sm col-md-6 col-lg ">
                         <div className="product">
