@@ -4,9 +4,9 @@ import React from "react";
 export const Modist = (props) => {
   return (
     <section className="ftco-section ftco-no-pb ftco-no-pt bg-light pb-5">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"
+      <div className="container pb-5">
+        <div className="row ">
+          <div className="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center video-background"
             style={{}}>
             <a href="https://vimeo.com/45830194"
               className="icon popup-vimeo d-flex justify-content-center align-items-center">

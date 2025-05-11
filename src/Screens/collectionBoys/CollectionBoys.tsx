@@ -6,15 +6,15 @@ import {
     Link
 } from "react-router-dom";
 // import { useFirebaseConnect } from 'react-redux-firebase'
-
+// import { shallowEqual, useSelector } from 'react-redux'
 
 
 
 // console.log(result)
 
 
-const Collection = (props) => {
-    // console.log("useSelector",useSelector());
+const CollectionBoys = (props) => {
+    // console.log("useSelector", useSelector());
     const [currentLoadedPosts, setcurrentLoadedPosts] = useState(10)
     const [slicedresult, setslicedresult] = useState([])
     // const statt = useSelector(state => state)A0OPoskeSYMah4lUbdbI
@@ -66,7 +66,7 @@ const Collection = (props) => {
                         <li><a href="#">Beauty <span>(140)</span></a></li>
                     </div>
                 </div>
-                {/* <div className="sidebar-box ftco-animate fadeInUp ftco-animated">
+                <div className="sidebar-box ftco-animate fadeInUp ftco-animated">
                     <h3>Recent Blog</h3>
                     <div className="block-21 mb-4 d-flex">
                         <a className="blog-img mr-4"
@@ -107,7 +107,7 @@ const Collection = (props) => {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div className="sidebar-box ftco-animate fadeInUp ftco-animated">
                     <h3>Tag Cloud</h3>
                     <div className="tagcloud">
@@ -192,5 +192,5 @@ const Collection = (props) => {
     )
 }
 
-export default memo(Collection)
+export default memo(CollectionBoys)
 

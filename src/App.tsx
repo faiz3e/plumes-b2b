@@ -2,10 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Route, Router, BrowserRouter, Routes } from 'react-router-dom'
-import Header from './Screens/Header';
-import { Footer } from './Screens/Footer';
-import { Home } from './Screens/Home';
-import Collection from './Screens/Collection';
+import Header from './Screens/components/Header';
+import { Footer } from './Screens/components/Footer';
+import { Home } from './Screens/home/Home';
+import CollectionBoys from './Screens/collectionBoys/CollectionBoys';
+import CollectionGirls from './Screens/collectionGirls/CollectionGirls';
 import { SingleProduct } from './Screens/SingleProduct';
 import Contact from './Screens/Contact';
 import AboutUs from './Screens/AboutUs';
@@ -30,8 +31,9 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/collection' element={<Collection />} />
-        <Route path='/singleProduct/:id' element={<SingleProduct />} />
+        <Route path='/collection-boys' element={<CollectionBoys />} />
+        <Route path='/collection-girls' element={<CollectionGirls />} />
+        <Route path='/singleProduct/:sku' element={<SingleProduct />} />
         {/* <Route path='/login' element={<Login />} /> */}
         <Route path='/contact' element={<Contact />} />
         {/* <Route path='/orders' element={<Orders />} /> */}
